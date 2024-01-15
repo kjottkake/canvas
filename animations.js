@@ -10,6 +10,13 @@ function getRandomColor() {
     return `#${randomColor}`;
 }
 
+function getRandomSize() {
+    // Define the range for your font sizes, e.g., between 12px and 36px
+    const minSize = 36;
+    const maxSize = 64;
+    return Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+}
+
 
 function addWordToCloud(word) {
     // This function would add the word to the visual word cloud
@@ -17,6 +24,7 @@ function addWordToCloud(word) {
     var wordCloud = document.getElementById('wordCloudBoard');
     var newWordSpan = document.createElement('span');
     newWordSpan.style.color = getRandomColor();
+    newWordSpan.style.fontSize = `${getRandomSize()}px`;
     newWordSpan.textContent = word + " "; // Add space after word
     wordCloud.appendChild(newWordSpan);
   }
