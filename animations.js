@@ -3,6 +3,7 @@ document.getElementById('wordForm').addEventListener('submit', function(event) {
     const word = document.getElementById('wordInput').value;
     // add word to cloud
     addWordToCloud(word);
+    this.reset();
 });
 
 function getRandomColor() {
