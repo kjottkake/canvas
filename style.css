@@ -14,12 +14,16 @@ body {
     gap: 20px; /* This adds space between the canvas and the form */
   }
 
+span {
+  font-size: 3rem;
+}
+
 
 #wordCloudBoard {
 margin-top: 2%;
 width: 95%;
 height: 700px; /* Adjust as needed */
-border: 1px solid red;
+/* border: 1px solid red; */
 }
   
 .form-group {

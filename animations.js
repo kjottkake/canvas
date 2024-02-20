@@ -17,7 +17,7 @@ document.getElementById('wordForm').addEventListener('submit', async function(ev
 
         const data = await response.json()
 
-        let translatedText = data.translatedText
+        let translatedText = data.translatedText + " " //adds space
 
     // add word to cloud
     addWordToCloud(word, translatedText);
@@ -36,8 +36,8 @@ function getRandomColor() {
 
 function getRandomSize() {
     // Define the range for your font sizes, e.g., between 12px and 36px
-    const minSize = 36;
-    const maxSize = 64;
+    const minSize = 64;
+    const maxSize = 128;
     return Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
 }
 
@@ -52,7 +52,7 @@ function addWordToCloud(word, tT) {
     
     newWordSpan.style.color = getRandomColor();
     newWordSpan.style.fontSize = `${getRandomSize()}px`;
-    newWordSpan.textContent = word + " "; // Add space after word
+    newWordSpan.textContent = word + "  "; // Add space after word
 
     newWordDefSpan.textContent = tT
 
