@@ -1,3 +1,12 @@
+const wordsArray = [];
+
+let words = {};
+
+function addWord(original, translation){
+    words[original] = translation;
+}
+
+
 document.getElementById('wordForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     const word = document.getElementById('wordInput').value;
@@ -19,8 +28,18 @@ document.getElementById('wordForm').addEventListener('submit', async function(ev
 
         let translatedText = data.translatedText + " " //adds space
 
+        //adds to object
+        addWord(word, translatedText);
+
     // add word to cloud
     addWordToCloud(word, translatedText);
+    
+    //add word to localArray
+    wordsArray.push(word);
+    console.log("words array: " + wordsArray);
+    console.log("words object: ", words);
+    // console.log(`words object: ${JSON.stringify(words)}`);
+
     this.reset();
 
     } catch (error) {
